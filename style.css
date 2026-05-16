@@ -1,0 +1,395 @@
+/* =====================
+   BASE
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: #fff;
+    background: linear-gradient(135deg, #1a2f1a, #113611);
+    min-height: 100vh;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.6);
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #a6ff4d;
+}
+
+.nav-menu a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #a6ff4d;
+}
+
+/* =====================
+   HERO
+===================== */
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* =====================
+   BUTTON
+===================== */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #7CFC00;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #5ad600;
+}
+
+/* =====================
+   CONTENT
+===================== */
+.content-block {
+    background: rgba(0, 0, 0, 0.6);
+    margin: 40px;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* =====================
+   MENU POPUP
+===================== */
+.menu-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.menu-content {
+    background: #1f2f1f;
+    padding: 25px;
+    border-radius: 15px;
+    color: white;
+    max-width: 400px;
+}
+
+.close-btn {
+    margin-top: 10px;
+    padding: 10px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* =====================
+   TABLES (SIMPLE)
+===================== */
+.tables-map {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.table {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.3);
+}
+
+.table:hover {
+    transform: scale(1.1);
+}
+
+.small { width: 60px; height: 60px; }
+.medium { width: 80px; height: 80px; }
+.large { width: 100px; height: 100px; }
+
+.free { background: #3cb371; }
+.busy { background: #c0392b; cursor: not-allowed; opacity: 0.7; }
+
+.table.active {
+    outline: 3px solid #7CFC00;
+}
+
+/* =====================
+   BOOKING FORM
+===================== */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+    margin: auto;
+}
+
+.booking-form input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* =====================
+   SUCCESS POPUP
+===================== */
+.success-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+.success-content {
+    background: #1f2f1f;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px #7CFC00;
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(0,0,0,0.7);
+}
+
+.menu-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.menu-content {
+    background: #1f2f1f;
+    padding: 25px;
+    border-radius: 15px;
+    color: white;
+    max-width: 400px;
+}
+
+.close-btn {
+    margin-top: 10px;
+    padding: 10px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #0f2a0f, #1d3d1d);
+    color: white;
+}
+
+/* назад кнопка */
+.back-btn {
+    display: inline-block;
+    margin: 15px;
+    padding: 10px 15px;
+    background: #00aa55;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.back-btn:hover {
+    background: #00ff88;
+}
+
+/* секції */
+.menu-section {
+    width: 90%;
+    margin: 40px auto;
+}
+
+.menu-section h2 {
+    color: #00ff88;
+    text-align: center;
+}
+
+/* сітка */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+/* КВАДРАТИ */
+.card {
+    height: 150px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* hover анімація */
+.card:hover {
+    transform: scale(1.06);
+
+    background: rgba(0,255,100,0.20);
+
+    border: 2px solid #00ff88;
+
+    box-shadow: 0 0 20px rgba(0,255,100,0.6);
+
+    cursor: pointer;
+}
+
+/* текст */
+.title {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.price {
+    color: #00ff88;
+    font-weight: bold;
+}
+
+.card {
+    width: 100%;
+    height: 160px;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 2px solid #00ff88; /* 🔥 ЧІТКА РАМКА */
+    border-radius: 0px; /* 🔥 РІВНИЙ КВАДРАТ */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+
+    box-shadow: 0 0 5px rgba(0,255,100,0.2);
+}
+.cart {
+    position: sticky;
+    top: 10px;
+
+    width: 90%;
+    margin: 20px auto;
+
+    background: rgba(0,0,0,0.4);
+    border: 2px solid #00ff88;
+    border-radius: 12px;
+
+    padding: 15px;
+}
+
+.cart h2 {
+    text-align: center;
+    color: #00ff88;
+}
+
+#cartItems {
+    list-style: none;
+    padding: 0;
+}
+
+#cartItems li {
+    padding: 5px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.order-btn {
+    width: 100%;
+    margin-top: 10px;
+
+    padding: 10px;
+    background: #00ff88;
+    border: none;
+    cursor: pointer;
+
+    font-weight: bold;
+}
