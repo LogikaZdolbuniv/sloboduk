@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrek Cafe | Бронювання</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 🔔 SUCCESS POPUP (ПРАВИЛЬНО: всередині body) -->
+<div class="success-popup" id="successPopup">
+    <div class="success-content">
+        <h2>🎉 Бронювання успішне!</h2>
+        <p id="successText">Ваш столик заброньовано</p>
+
+        <button class="btn" onclick="closeSuccess()">Ок 👍</button>
+    </div>
+</div>
+
+<!-- 🔝 NAVBAR -->
+<header class="navbar">
+    <div class="logo">Shrek Cafe</div>
+
+    <nav class="nav-menu">
+        <a href="index.html">Головна</a>
+        <a href="menu.html">Меню 🍔</a>
+        <a href="booking.html" class="active">Бронювання</a>
+    </nav>
+</header>
+
+<!-- 🪑 CONTENT -->
+<section class="content-block">
+    <h1>🪑 Обери столик</h1>
+
+    <p>🟢 зелений — вільний | 🔴 червоний — зайнятий</p>
+
+    <!-- 🗺️ MAP -->
+    <div class="cafe-map">
+        <h3>🗺️ Карта Shrek Cafe</h3>
+
+        <div class="map-grid">
+
+            <div class="table free small" onclick="selectTable(this)">2</div>
+            <div class="table busy small">2</div>
+
+            <div class="table free medium" onclick="selectTable(this)">4</div>
+            <div class="table free medium" onclick="selectTable(this)">4</div>
+
+            <div class="table busy large">6</div>
+            <div class="table free large" onclick="selectTable(this)">6</div>
+
+            <div class="decor bar">🍹 Бар</div>
+            <div class="decor kitchen">🍔 Кухня</div>
+            <div class="decor entrance">🚪 Вхід</div>
+
+        </div>
+    </div>
+
+    <!-- 🍽️ FORM -->
+    <h2>🍽️ Бронювання</h2>
+
+    <div class="booking-form">
+        <input type="text" placeholder="Ваше ім’я">
+        <input type="date">
+        <input type="number" placeholder="Кількість людей">
+
+        <button class="btn" onclick="confirmBooking()">Підтвердити бронювання</button>
+    </div>
+</section>
+
+<!-- ⚙️ JS -->
+<script>
+let selectedTable = null;
+
+function selectTable(el) {
+    if (el.classList.contains("busy")) return;
+
+    document.querySelectorAll(".table.free").forEach(t => t.classList.remove("active"));
+
+    el.classList.add("active");
+    selectedTable = el.innerText;
+}
+
+function confirmBooking() {
+    if (!selectedTable) {
+        alert("❗ Спочатку обери столик!");
+        return;
+    }
+
+    document.getElementById("successText").innerText =
+        "Ти забронював столик №" + selectedTable + " 🪑🌿";
+
+    document.getElementById("successPopup").style.display = "flex";
+}
+
+function closeSuccess() {
+    document.getElementById("successPopup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
