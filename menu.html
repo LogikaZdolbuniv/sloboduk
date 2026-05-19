@@ -13,18 +13,7 @@
     <h1>🍔 Меню Shrek Cafe</h1>
 </header>
 
-<!-- 🛒 КОШИК -->
-<div class="cart">
-    <h2>🛒 Кошик</h2>
-
-    <ul id="cartItems"></ul>
-
-    <p>💸 Разом: <span id="totalPrice">0</span> грн</p>
-
-    <button class="order-btn">Замовити</button>
-</div>
-
-<!-- 🍔 СТРАВИ -->
+<!-- 🍔 Страви -->
 <section class="menu-section">
     <h2>🍔 Страви</h2>
 
@@ -33,25 +22,22 @@
         <div class="card">
             <div class="title">🟢 Болотний бургер</div>
             <div class="price">120 грн</div>
-            <button onclick="addToCart('Болотний бургер', 120)">Додати</button>
         </div>
 
         <div class="card">
             <div class="title">🧅 Цибулеві кільця</div>
             <div class="price">60 грн</div>
-            <button onclick="addToCart('Цибулеві кільця', 60)">Додати</button>
         </div>
 
         <div class="card">
             <div class="title">🍟 Фрі Фіона</div>
             <div class="price">55 грн</div>
-            <button onclick="addToCart('Фрі Фіона', 55)">Додати</button>
         </div>
 
     </div>
 </section>
 
-<!-- 🥤 НАПОЇ -->
+<!-- 🥤 Напої -->
 <section class="menu-section">
     <h2>🥤 Напої</h2>
 
@@ -60,19 +46,17 @@
         <div class="card">
             <div class="title">🧃 Зілля болота</div>
             <div class="price">40 грн</div>
-            <button onclick="addToCart('Зілля болота', 40)">Додати</button>
         </div>
 
         <div class="card">
             <div class="title">🍹 Огрівель</div>
             <div class="price">70 грн</div>
-            <button onclick="addToCart('Огрівель', 70)">Додати</button>
         </div>
 
     </div>
 </section>
 
-<!-- 🍰 ДЕСЕРТИ -->
+<!-- 🍰 Десерти -->
 <section class="menu-section">
     <h2>🍰 Десерти</h2>
 
@@ -81,59 +65,15 @@
         <div class="card">
             <div class="title">🍰 Замок Шрека</div>
             <div class="price">90 грн</div>
-            <button onclick="addToCart('Замок Шрека', 90)">Додати</button>
         </div>
 
         <div class="card">
             <div class="title">🍩 Пончики</div>
             <div class="price">50 грн</div>
-            <button onclick="addToCart('Пончики', 50)">Додати</button>
         </div>
 
     </div>
 </section>
 
-<script>
-let total = 0;
-
-function addToCart(name, price, btn) {
-    const list = document.getElementById("cartItems");
-
-    // 📦 створюємо елемент
-    const item = document.createElement("li");
-    item.style.display = "flex";
-    item.style.justifyContent = "space-between";
-    item.style.alignItems = "center";
-    item.style.padding = "6px";
-
-    const text = document.createElement("span");
-    text.textContent = `${name} - ${price} грн`;
-
-    const removeBtn = document.createElement("button");
-    removeBtn.textContent = "❌";
-    removeBtn.style.background = "transparent";
-    removeBtn.style.border = "none";
-    removeBtn.style.color = "red";
-    removeBtn.style.cursor = "pointer";
-
-    removeBtn.onclick = function () {
-        list.removeChild(item);
-        total -= price;
-        document.getElementById("totalPrice").textContent = total;
-    };
-
-    item.appendChild(text);
-    item.appendChild(removeBtn);
-    list.appendChild(item);
-
-    total += price;
-    document.getElementById("totalPrice").textContent = total;
-
-    // ✨ АНІМАЦІЯ КНОПКИ
-    btn.classList.add("fly");
-
-    setTimeout(() => {
-        btn.classList.remove("fly");
-    }, 500);
-}
-</script>
+</body>
+</html>
